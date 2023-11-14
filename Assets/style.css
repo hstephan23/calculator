@@ -1,0 +1,86 @@
+.buttons {
+    display: grid;
+    grid-gap: 5px;
+    grid-template-areas: 
+        "AC C percent division"
+        "one two three multiplication"
+        "four five six subtraction"
+        "seven eight nine addition"
+        "zero zero period equal";
+}
+
+.AC {
+    grid-area: AC;
+}
+
+.C {
+    grid-area: C;
+}
+
+.percent {
+    grid-area: percent;
+}
+
+.division {
+    grid-area: division;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area: two;
+}
+
+.three {
+    grid-area: three;
+}
+
+.multiplication {
+    grid-area: multiplication;
+}
+
+.four {
+    grid-area: four;
+}
+
+.five {
+    grid-area: five;
+}
+
+.six {
+    grid-area: six;
+}
+
+.subtraction {
+    grid-area: subtraction;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.addition {
+    grid-area: addition;
+}
+
+.zero {
+    grid-area: zero;
+}
+
+.period {
+    grid-area: period;
+}
+
+.equal {
+    grid-area: equal;
+}
