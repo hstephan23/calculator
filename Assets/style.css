@@ -8,6 +8,14 @@
         "seven eight nine addition"
         "zero zero period equal";
 }
+.multiplication, .subtraction, .addition, .division {
+    color: orangered;
+}
+
+.AC, .C, .percent {
+    color: rgb(69, 173, 173);
+}
+
 
 .AC {
     grid-area: AC;
@@ -83,4 +91,6 @@
 
 .equal {
     grid-area: equal;
+    color: white;
+    background-color: rgb(255, 0, 55);
 }
