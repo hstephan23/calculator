@@ -1,3 +1,7 @@
+var previous = "";
+var type = "";
+var total = 0;
+
 function updateNumber(number) {
     const initial = document.getElementById("main");
     const currentText = initial.textContent;
@@ -11,10 +15,14 @@ function clearNumber() {
 };
 
 function clearHistory() {
-
+   previous = ""; 
 };
 
-document.getElementById("one").addEventListener("click", function () {
+function storeNumber() {
+    previous = Number(document.getElementById("main").textContent);
+}
+
+document.getElementById("AC").addEventListener("click", function () {
     clearNumber();
     clearHistory();
 });
@@ -62,3 +70,84 @@ document.getElementById("nine").addEventListener("click", function () {
 document.getElementById("zero").addEventListener("click", function () {
     updateNumber(0);
 });
+
+document.getElementById("period").addEventListener("click", function () {
+    updateNumnber(".");
+})
+
+document.getElementById("multiplication").addEventListener("click", function () {
+    previous = document.getElementById("main").textContent
+    if (previous != "") {
+        storeNumber();
+        console.log(previous);
+        clearNumber();
+        type = "multiplication";
+    } else {
+        updateNumber("Error");
+    }
+});
+
+document.getElementById("addition").addEventListener("click", function () {
+    previous = document.getElementById("main").textContent
+    if (previous != "") {
+        storeNumber();
+        console.log(previous);
+        clearNumber();
+        type = "addition";
+    } else {
+        updateNumber("Error");
+    }
+});
+
+document.getElementById("subtraction").addEventListener("click", function () {
+    previous = document.getElementById("main").textContent
+    if (previous != "") {
+        storeNumber();
+        console.log(previous);
+        clearNumber();
+        type = "subtraction";
+    } else {
+        updateNumber("Error");
+    }
+});
+
+document.getElementById("division").addEventListener("click", function () {
+    previous = document.getElementById("main").textContent
+    if (previous != "") {
+        storeNumber();
+        console.log(previous);
+        clearNumber();
+        type = "division";
+    } else {
+        updateNumber("Error! Cannot divide by 0");
+    }
+});
+
+document.getElementById("equal").addEventListener("click", function () {
+    const value = document.getElementById("main");
+    const result = document.getElementById("result");
+    var numberValue = Number(value.textContent);
+    if (type === "multiplication") {
+        total = previous * numberValue;
+        result.textContent = total;
+        clearHistory();
+        clearNumber();
+    } else if (type === "division" && numberValue != 0) {
+        total = previous / numberValue;
+        result.textContent = total;
+        clearHistory();
+        clearNumber();
+    } else if (type === "addition") {
+        total = previous + numberValue;
+        result.textContent = total;
+        clearHistory();
+        clearNumber();
+    } else if (type === "subtraction") {
+        total = previous - numberValue;
+        result.textContent = total;
+        clearHistory();
+        clearNumber();
+    } else if (type === "division" && Number(numberValue) === 0) {
+        value.textContent = "Error"
+    }
+})
